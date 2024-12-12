@@ -16,13 +16,14 @@ function collectEmployees() {
     if (isNaN(salary)) {
       salary = 0;
     };
-  
+    //creates current employee into the arroy
     const currentEmployee = {firstName: firstName || "Unknown", 
       lastName: lastName || "Unknown",  
-      salary: salary}     
-  } while (confirm("Do you want to add another employee?"));
-
-  employeesArray.push(currentEmployee)
+      salary: salary};
+      //push info to the array
+      employeesArray.push(currentEmployee);
+    } while (confirm("Do you want to add another employee?")); //confirms if you want to add any more entries
+  return employeesArray;
 };
 
 // Display the average salary
