@@ -27,13 +27,15 @@ function collectEmployees() {
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  const averageSalaryWithTwoDecimals = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
-  const averageSalary = averageSalaryWithTwoDecimals / employeesArray.length;
-  
+  const totalSalary= employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
+  const averageSalary = totalSalary / employeesArray.length;
+  const numberOfEmployees = employeesArray.length
+  const averageSalaryWithTwoDecimals = averageSalary.toFixed(2);
+
   if (Number.isInteger(averageSalary)) {
-    console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalaryWithTwoDecimals}`);
+    console.log(`The average employee salary between our ${numberOfEmployees} employee(s) is $${averageSalaryWithTwoDecimals}`);
   } else {
-    console.log(`The average employee salary between our employee(s) is $${averageSalaryWithTwoDecimals}`);
+    console.log(`The average employee salary between our ${numberOfEmployees} employee(s) is $${averageSalaryWithTwoDecimals}`);
   }
 };
 
