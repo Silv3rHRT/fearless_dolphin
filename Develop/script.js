@@ -27,13 +27,13 @@ function collectEmployees() {
 
 // Display the average salary
 const displayAverageSalary = function (employeesArray) {
-  const totalSalary = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
-  const averageSalary = totalSalary / employeesArray.length;
-
+  const averageSalaryWithTwoDecimals = employeesArray.reduce((sum, employee) => sum + employee.salary, 0);
+  const averageSalary = averageSalaryWithTwoDecimals / employeesArray.length;
+  
   if (Number.isInteger(averageSalary)) {
-    console.log(`The average employee salary between our employee(s) is $${averageSalary}`);
+    console.log(`The average employee salary between our ${employeesArray.length} employee(s) is $${averageSalaryWithTwoDecimals}`);
   } else {
-    console.log(`The average employee salary between our employee(s) is $${averageSalary.toFixed(2)}`);
+    console.log(`The average employee salary between our employee(s) is $${averageSalaryWithTwoDecimals}`);
   }
 };
 
@@ -43,10 +43,10 @@ const getRandomEmployee = function (employeesArray) {
   const surprisedPikachu = Math.floor(Math.random() * employeesArray.length);
   
   //select winner
-  const winner = employeesArray[surprisedPikachu];
+  const employee = employeesArray[surprisedPikachu];
 
   //log the winner
-  console.log(`congratulations to ${winner.firstName}, our random drawing winner!`);
+  console.log(`Congratulations to ${employee.firstName} ${employee.lastName}, our random drawing winner!`);
 };
 
 /*
